@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{BA865108-5546-4293-A0CF-0548C22DB8B4}|Tanks3DServer\\Tanks3DServer.csproj|solutionrelative:tanks3dserver\\serverudpscripts\\serverudp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BA865108-5546-4293-A0CF-0548C22DB8B4}|Tanks3DServer\\Tanks3DServer.csproj|c:\\users\\vip\\source\\repos\\tanks3dserver\\tanks3dserver\\handlers\\lobbyhandlerstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA865108-5546-4293-A0CF-0548C22DB8B4}|Tanks3DServer\\Tanks3DServer.csproj|solutionrelative:tanks3dserver\\handlers\\lobbyhandlerstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BA865108-5546-4293-A0CF-0548C22DB8B4}|Tanks3DServer\\Tanks3DServer.csproj|c:\\users\\vip\\source\\repos\\tanks3dserver\\tanks3dserver\\servertcpscripts\\servertcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA865108-5546-4293-A0CF-0548C22DB8B4}|Tanks3DServer\\Tanks3DServer.csproj|solutionrelative:tanks3dserver\\servertcpscripts\\servertcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -44,10 +48,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BA865108-5546-4293-A0CF-0548C22DB8B4}|Tanks3DServer\\Tanks3DServer.csproj|c:\\users\\vip\\source\\repos\\tanks3dserver\\tanks3dserver\\database\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA865108-5546-4293-A0CF-0548C22DB8B4}|Tanks3DServer\\Tanks3DServer.csproj|solutionrelative:tanks3dserver\\database\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA865108-5546-4293-A0CF-0548C22DB8B4}|Tanks3DServer\\Tanks3DServer.csproj|c:\\users\\vip\\source\\repos\\tanks3dserver\\tanks3dserver\\handlers\\lobbyhandlerstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA865108-5546-4293-A0CF-0548C22DB8B4}|Tanks3DServer\\Tanks3DServer.csproj|solutionrelative:tanks3dserver\\handlers\\lobbyhandlerstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA865108-5546-4293-A0CF-0548C22DB8B4}|Tanks3DServer\\Tanks3DServer.csproj|c:\\users\\vip\\source\\repos\\tanks3dserver\\tanks3dserver\\lobbyscripts\\lobbydto\\leavelobbyresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -169,7 +169,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\Program.cs",
               "RelativeDocumentMoniker": "Tanks3DServer\\Program.cs",
@@ -178,12 +178,11 @@
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T07:43:45.453Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MoiraiService.cs",
               "DocumentMoniker": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\MoiraiScripts\\MoiraiService.cs",
               "RelativeDocumentMoniker": "Tanks3DServer\\MoiraiScripts\\MoiraiService.cs",
@@ -192,12 +191,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFcAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-29T04:04:56.354Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "LobbyHandler.cs",
               "DocumentMoniker": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\LobbyScripts\\LobbyHandler.cs",
               "RelativeDocumentMoniker": "Tanks3DServer\\LobbyScripts\\LobbyHandler.cs",
@@ -206,12 +204,11 @@
               "ViewState": "AQIAACYAAAAAAAAAAAAawEgAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-31T14:29:36.493Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "LobbyModel.cs",
               "DocumentMoniker": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\LobbyScripts\\LobbyModel.cs",
               "RelativeDocumentMoniker": "Tanks3DServer\\LobbyScripts\\LobbyModel.cs",
@@ -220,12 +217,11 @@
               "ViewState": "AQIAABgAAAAAAAAAAAAAAEEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-31T12:46:47.032Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DatabaseService.cs",
               "DocumentMoniker": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\Database\\DatabaseService.cs",
               "RelativeDocumentMoniker": "Tanks3DServer\\Database\\DatabaseService.cs",
@@ -234,8 +230,7 @@
               "ViewState": "AQIAAGIAAAAAAAAAAAAcwG0AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T13:38:14.308Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -245,7 +240,7 @@
               "RelativeDocumentMoniker": "Tanks3DServer\\ServerUDPScripts\\ServerUDP.cs",
               "ToolTip": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\ServerUDPScripts\\ServerUDP.cs",
               "RelativeToolTip": "Tanks3DServer\\ServerUDPScripts\\ServerUDP.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAABNAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-05T08:56:53.192Z",
               "IsPinned": true,
@@ -253,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ServerTCP.cs",
               "DocumentMoniker": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\ServerTCPScripts\\ServerTCP.cs",
               "RelativeDocumentMoniker": "Tanks3DServer\\ServerTCPScripts\\ServerTCP.cs",
@@ -262,8 +257,7 @@
               "ViewState": "AQIAAAwAAAAAAAAAAAAAACMAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-05T08:56:55.592Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -271,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "BuyTankResponse.cs",
               "DocumentMoniker": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\LobbyScripts\\LobbyDTO\\BuyTankResponse.cs",
               "RelativeDocumentMoniker": "Tanks3DServer\\LobbyScripts\\LobbyDTO\\BuyTankResponse.cs",
@@ -279,22 +273,20 @@
               "RelativeToolTip": "Tanks3DServer\\LobbyScripts\\LobbyDTO\\BuyTankResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T04:41:01.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-04T04:41:01.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "dbo.Users [\u0414\u0430\u043D\u043D\u044B\u0435]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/Tanks3DDataBase/True/SqlTable/dbo.Users.sql",
               "ToolTip": "dbo.Users [\u0414\u0430\u043D\u043D\u044B\u0435]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-03T08:13:52.729Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T08:13:52.729Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\Database\\User.cs",
               "RelativeDocumentMoniker": "Tanks3DServer\\Database\\User.cs",
@@ -302,8 +294,7 @@
               "RelativeToolTip": "Tanks3DServer\\Database\\User.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABEAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T07:24:59.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T07:24:59.031Z"
             },
             {
               "$type": "Document",
@@ -319,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "UsernameEncryptor.cs",
               "DocumentMoniker": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\Database\\UsernameEncryptor.cs",
               "RelativeDocumentMoniker": "Tanks3DServer\\Database\\UsernameEncryptor.cs",
@@ -327,8 +318,7 @@
               "RelativeToolTip": "Tanks3DServer\\Database\\UsernameEncryptor.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T06:07:54.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T06:07:54.708Z"
             },
             {
               "$type": "Document",
@@ -656,7 +646,7 @@
         "Y": 579,
         "Width": 1506,
         "Height": 990,
-        "WindowState": 2
+        "WindowState": 0
       },
       "DocumentGroups": [
         {
@@ -665,7 +655,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "LobbyHandlersType.cs",
               "DocumentMoniker": "C:\\Users\\VIP\\source\\repos\\Tanks3DServer\\Tanks3DServer\\Handlers\\LobbyHandlersType.cs",
               "RelativeDocumentMoniker": "Tanks3DServer\\Handlers\\LobbyHandlersType.cs",
