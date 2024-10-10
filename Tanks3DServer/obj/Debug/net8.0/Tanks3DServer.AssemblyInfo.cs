@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tanks3DServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ee82dd33927e44a4e56c4676f0542eba9191469")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8e74c96561823c50cee8a12c6faa7a9994c2881")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tanks3DServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tanks3DServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

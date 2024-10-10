@@ -61,7 +61,8 @@ namespace Tanks3DServer.Database
             if (authResultType == AuthResultType.Registred)
             {
                 Console.WriteLine("RegisterUserAsync started 5");
-
+                UserTankInventory userTankInventory = new UserTankInventory();
+                userTankInventory.tanksBuyedID.Add(0);
                 user = new User
                 {
                     Username = username,
@@ -112,7 +113,6 @@ namespace Tanks3DServer.Database
             AuthResultType authResultType = AuthResultType.Logined;
             //IdentifyType identifyType = IdentifyCheck.IdentifyUsernameOrEmail(emailOrUsername);
             User user = null;
-            Console.WriteLine("LoginAsync 1");
             Participant participant = null;
 
             //// Ищем пользователя по имени пользователя или email
@@ -132,8 +132,6 @@ namespace Tanks3DServer.Database
             //        authResultType = AuthResultType.AccoundNotFound;
             //    }
             //}
-            Console.WriteLine("LoginAsync 2");
-
             user = await _context.Users.FirstOrDefaultAsync(u => u.AuthCode == authCode);
 
             // Проверка пароля
@@ -145,15 +143,16 @@ namespace Tanks3DServer.Database
             // Обновление баланса пользователя
             if (user != null)
             {
+
                 participant = new Participant(webSocket, user.Username);
                 _lobbyModel.AddParticipant(participant);
 
                 decimal startBalance = user.Balance;
 
                 List<Transaction> processedTransactions = JsonConvert.DeserializeObject<List<Transaction>>(user.ProccesedTransactionsJSon);
-                List<Transaction> fullTransactions = await _moiraiService.GetAllTransactionForAddress(user.WalletAddres);
 
-                if(processedTransactions == null)
+                List<Transaction> fullTransactions = await _moiraiService.GetAllTransactionForAddress(user.WalletAddres);
+                if (processedTransactions == null)
                     processedTransactions = new List<Transaction>();
 
                 foreach (var transaction in fullTransactions)
@@ -165,10 +164,10 @@ namespace Tanks3DServer.Database
                         {
                             user.Balance += Math.Abs(transaction.Amount);
                         }
-                        else if (transaction.Category == "send")
-                        {
-                            user.Balance -= Math.Abs(transaction.Amount);
-                        }
+                        //else if (transaction.Category == "send")
+                        //{
+                        //    user.Balance -= Math.Abs(transaction.Amount);
+                        //}
                         Console.WriteLine("user.Balance " + user.Balance);
 
                         processedTransactions.Add(transaction);

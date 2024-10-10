@@ -33,8 +33,8 @@ namespace Tanks3DServer.ServerTCPScripts
             //var certificate = new X509Certificate2(certificatePath, certificatePassword);
 
             //// Создание экземпляра WebSocketServer
-            _server = new WebSocketServer("ws://212.67.12.133:7070/");
-            //_server = new WebSocketServer("ws://localhost:7070/");
+            //_server = new WebSocketServer("ws://5.178.3.80:7070/");
+            _server = new WebSocketServer("ws://localhost:7070/");
             //_server.SslConfiguration.ServerCertificate = certificate;
 
             //_server.Log.Level = WebSocketSharp.LogLevel.Trace;

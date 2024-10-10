@@ -40,5 +40,7 @@ namespace Tanks3DServer.Handlers
         SendCoinsResponse = 29,
         BuyTankRequest = 30,
         BuyTankResponse = 31,
+        UpdateWalletRequest = 32,
+        UpdateWalletResponse = 33
     }
 }

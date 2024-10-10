@@ -225,7 +225,7 @@ namespace Tanks3DServer.GameSessionScripts
                     string messageData = JsonConvert.SerializeObject(message);
                     _ = participant.WebSocketUDP.SendMessageAsync(messageData);
                 }
-                int totalCoins = gameSession.sumBid;
+                float totalCoins = gameSession.sumBid;
 
                 Console.WriteLine("totalCoins " + totalCoins);
 
@@ -237,12 +237,13 @@ namespace Tanks3DServer.GameSessionScripts
                     int totalScore = aliveGameParticipants.Select(x => x.score).Sum();
                     if (aliveGameParticipants.Length == 1)
                     {
+                        float commision = totalCoins * 0.1f;
+
                         WinGameResponse winGameResponse = new WinGameResponse();
                         winGameResponse.tankWinnerID = aliveGameParticipants[0].id;
-                        winGameResponse.bidWin = totalCoins - aliveGameParticipants[0].bid;
-                        Console.WriteLine("Записали с " + aliveGameParticipants[0].userID + " сумму  " + totalCoins);
-
-                        await _databaseService.AddCurrencyAsync(aliveGameParticipants[0].userID, totalCoins);
+                        winGameResponse.bidWin = (totalCoins - commision) - aliveGameParticipants[0].bid;
+                        winGameResponse.commision = commision;
+                        await _databaseService.AddCurrencyAsync(aliveGameParticipants[0].userID, (decimal)(totalCoins - commision));
 
                         string body = JsonConvert.SerializeObject(winGameResponse);
                         Message message = new Message(Handlers.HandlerTypes.Game, (int)GameTypeHandler.WinGameResponse, "", body);
@@ -262,13 +263,15 @@ namespace Tanks3DServer.GameSessionScripts
                         foreach (var item in blueParticipants)
                         {
                             double percentage = (double)item.score / totalScore;
-                            int playerCoins = (int)Math.Round(percentage * totalCoins);
+                            float playerCoins = (int)Math.Round(percentage * totalCoins);
+                            float commision = playerCoins * 0.1f;
 
                             WinGameResponse winGameResponse = new WinGameResponse();
                             winGameResponse.tankWinnerID = item.id;
-                            winGameResponse.bidWin = playerCoins;
+                            winGameResponse.bidWin = playerCoins - commision;
+                            winGameResponse.commision = commision;
 
-                            await _databaseService.AddCurrencyAsync(item.userID, playerCoins);
+                            await _databaseService.AddCurrencyAsync(item.userID, (decimal)(playerCoins - commision));
                             Console.WriteLine("Записали с " + item.userID + " сумму  " + item.bid);
 
                             string body = JsonConvert.SerializeObject(winGameResponse);
@@ -285,12 +288,15 @@ namespace Tanks3DServer.GameSessionScripts
                         foreach (var item in redParticipants)
                         {
                             double percentage = (double)item.score / totalScore;
-                            int playerCoins = (int)Math.Round(percentage * totalCoins);
+                            float playerCoins = (int)Math.Round(percentage * totalCoins);
+                            float commision = playerCoins * 0.1f;
+
                             WinGameResponse winGameResponse = new WinGameResponse();
                             winGameResponse.tankWinnerID = item.id;
-                            winGameResponse.bidWin = playerCoins;
+                            winGameResponse.bidWin = playerCoins - commision;
+                            winGameResponse.commision = commision;
 
-                            await _databaseService.AddCurrencyAsync(item.userID, playerCoins);
+                            await _databaseService.AddCurrencyAsync(item.userID, (decimal)(playerCoins - commision));
                             Console.WriteLine("Записали с " + item.userID + " сумму  " + item.bid);
 
                             string body = JsonConvert.SerializeObject(winGameResponse);

@@ -113,6 +113,12 @@ namespace Tanks3DServer.LobbyScripts
                 if (data != null)
                     _ = _lobbyModel.BuyTank(data, WebSocket);
             }
+            else if (lobbyHandlersType == LobbyHandlersType.UpdateWalletRequest)
+            {
+                UpdateWalletRequest data = JsonConvert.DeserializeObject<UpdateWalletRequest>(body);
+                if (data != null)
+                    _ = _lobbyModel.GetUpdatedWallet(data, WebSocket);
+            }
         }
     }
 }

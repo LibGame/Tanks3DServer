@@ -9,6 +9,7 @@ namespace Tanks3DServer.GameSessionScripts.GameDTO
     internal class WinGameResponse
     {
         public string tankWinnerID;
-        public int bidWin;
+        public float bidWin;
+        public float commision;
     }
 }

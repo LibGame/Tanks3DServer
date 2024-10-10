@@ -231,7 +231,7 @@ namespace Tanks3DServer.MoiraiScripts
         {
             // Параметры подключения к RPC
             string rpcUrl = "http://localhost:22555";
-            string rpcUser = "kiberuzbek";
+            string rpcUser = "horizontal";
             string rpcPassword = "labrador75";
 
             // Укажите адрес, по которому нужно фильтровать транзакции

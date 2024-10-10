@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Azure;
 using EnglishWordsServer.AutofacConfiig;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Collections;
 using System.Linq;
@@ -35,6 +36,61 @@ namespace Tanks3DServer.LobbyScripts
             _gameController = AutofacProjectContext.Container.Resolve<GameController>();
             _databaseService = AutofacProjectContext.Container.Resolve<DatabaseService>();
             _moiraiService = AutofacProjectContext.Container.Resolve<MoiraiService>();
+        }
+
+        public async Task GetUpdatedWallet(UpdateWalletRequest request, WebSocketBehavior webSocket)
+        {
+            bool result = true;
+            User user = await _databaseService.GetUserAsync(request.userID);
+            List<Transaction> processedTransactions = JsonConvert.DeserializeObject<List<Transaction>>(user.ProccesedTransactionsJSon);
+            List<Transaction> transactions = new List<Transaction>();
+            List<Transaction> fullTransactions = new List<Transaction>();
+
+            if (user != null)
+            {
+                fullTransactions = await _moiraiService.GetTransactions(user.WalletAddres, true);
+                transactions = fullTransactions.TakeLast(5).ToList();
+                decimal startBalance = user.Balance;
+
+                if (processedTransactions == null)
+                    processedTransactions = new List<Transaction>();
+                foreach (var transaction in fullTransactions)
+                {
+                    if (!processedTransactions.Contains(transaction))
+                    {
+
+                        if (transaction.Category == "receive")
+                        {
+                            user.Balance += Math.Abs(transaction.Amount);
+                        }
+                        //else if (transaction.Category == "send")
+                        //{
+                        //    user.Balance -= Math.Abs(transaction.Amount);
+                        //}
+                        Console.WriteLine("user.Balance " + user.Balance);
+
+                        processedTransactions.Add(transaction);
+                    }
+                }
+                if (!startBalance.Equals(user.Balance))
+                {
+                    user.ProccesedTransactionsJSon = JsonConvert.SerializeObject(processedTransactions);
+                }
+            }
+            else
+            {
+                result = false;
+            }
+            UpdateWalletResponse response = new UpdateWalletResponse();
+
+            response.user = user;
+            response.transactions = transactions;
+            response.result = result;
+            string data = JsonConvert.SerializeObject(response);
+            Message message = new Message(Handlers.HandlerTypes.Lobby, (int)LobbyHandlersType.UpdateWalletResponse, "", data);
+            string dataSend = JsonConvert.SerializeObject(message);
+
+            _ = webSocket.SendMessageAsync(dataSend);
         }
 
         public async Task BuyTank(BuyTankRequest request , WebSocketBehavior WebSocket)
@@ -289,14 +345,42 @@ namespace Tanks3DServer.LobbyScripts
         {
             User user = await _databaseService.GetUserAsync(getProfileRequest.userID);
             bool result = false;
+            List<Transaction> processedTransactions = JsonConvert.DeserializeObject<List<Transaction>>(user.ProccesedTransactionsJSon);
             List<Transaction> transactions = new List<Transaction>();
+            List<Transaction> fullTransactions = new List<Transaction>();
+
             if (user != null)
             {
                 result = true;
-                transactions = await _moiraiService.GetTransactions(user.WalletAddres, true);
-                transactions = transactions.TakeLast(5).ToList();
+                fullTransactions = await _moiraiService.GetTransactions(user.WalletAddres, true);
+                transactions = fullTransactions.TakeLast(5).ToList();
             }
+            decimal startBalance = user.Balance;
 
+            if (processedTransactions == null)
+                processedTransactions = new List<Transaction>();
+            foreach (var transaction in fullTransactions)
+            {
+                if (!processedTransactions.Contains(transaction))
+                {
+
+                    if (transaction.Category == "receive")
+                    {
+                        user.Balance += Math.Abs(transaction.Amount);
+                    }
+                    //else if (transaction.Category == "send")
+                    //{
+                    //    user.Balance -= Math.Abs(transaction.Amount);
+                    //}
+                    Console.WriteLine("user.Balance " + user.Balance);
+
+                    processedTransactions.Add(transaction);
+                }
+            }
+            if (!startBalance.Equals(user.Balance))
+            {
+                user.ProccesedTransactionsJSon = JsonConvert.SerializeObject(processedTransactions);
+            }
             GetProfileResponse getLobbySessionResponse = new GetProfileResponse();
 
             getLobbySessionResponse.user = user;

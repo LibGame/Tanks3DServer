@@ -32,8 +32,8 @@ namespace Tanks3DServer.ServerUDPScripts
             //var certificate = new X509Certificate2(certificatePath, certificatePassword);
 
             // Создание экземпляра WebSocketServer
-            _server = new WebSocketServer("ws://212.67.12.133:8080/");
-            //_server = new WebSocketServer("ws://localhost:8080/");
+            //_server = new WebSocketServer("ws://5.178.3.80:8080/");
+            _server = new WebSocketServer("ws://localhost:8080/");
 
             //_server.SslConfiguration.ServerCertificate = certificate;
             //_server.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
